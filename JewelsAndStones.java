@@ -1,26 +1,26 @@
-public class JewelsAndStones{
 
-	public int stonesInJewel(String stone, String jewel){
-		int count =0;
-		for (int i = 0 ; i < stone.length(); i++)
-		{
-			for (int j=0 ; j < jewel.length(); j++)
-			{
-				if(stone.charAt(i) == jewel.charAt(j)){
-					count = count + 1;
-				}
+import java.util.HashSet;
+import java.util.Set;
+
+public class JewelsAndStones{
+	private static int numJewelsInStones(String stones, String jewels) {
+		Set<Character> jeweltype = new HashSet<>();
+		for (char ch : jewels.toCharArray()) {
+			jeweltype.add(ch);
+		}
+		System.out.println(jewels.toCharArray());
+		int count = 0;
+		for (char c : stones.toCharArray()) {
+			if (jeweltype.contains(c)) {
+				count++;
 			}
 		}
 		System.out.print(count);
 		return count;
 	}
 
-	public static void main(String [] args){
-		String stone = "aA";
-		String jewel = "aAAbbbB";
-		JewelsAndStones countStones = new JewelsAndStones();
-		countStones.stonesInJewel(stone, jewel);
-
+	public static void main(String[] args) {
+		JewelsAndStones jewelCounter = new JewelsAndStones();
+		jewelCounter.numJewelsInStones("aAAbdB", "aA");
 	}
-
 }
