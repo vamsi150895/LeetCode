@@ -8,7 +8,7 @@ public class JewelsAndStones{
 		for (char ch : jewels.toCharArray()) {
 			jeweltype.add(ch);
 		}
-		System.out.println(jewels.toCharArray());
+		
 		int count = 0;
 		for (char c : stones.toCharArray()) {
 			if (jeweltype.contains(c)) {
